@@ -1,17 +1,19 @@
 package com.mason.app;
 
+import java.util.ArrayList;
+
 public class GiftBuilder {
 
-    public Sweets sweets;
+    public ArrayList <Sweets> sweets;
     public Package pack;
 
     /**
      * Constructor.
      */
-    public GiftBuilder(Package pack, Sweets sweets) {
+    public GiftBuilder(Package pack, ArrayList<Sweets> sweets) {
 
         if (pack == null || sweets == null) {
-            throw new IllegalArgumentException("profession and name can not be null");
+            throw new IllegalArgumentException("Type of package and sweets can't be null");
         }
         this.pack = pack;
         this.sweets = sweets;
@@ -22,12 +24,20 @@ public class GiftBuilder {
         return this;
     }
 
-    public GiftBuilder withSweets(Sweets sweets) {
+    public GiftBuilder withSweets(ArrayList <Sweets> sweets) {
         this.sweets = sweets;
         return this;
     }
 
       public Gift build() {
         return new Gift(this);
+    }
+
+    @Override
+    public String toString() {
+        return "GiftBuilder{" +
+                "sweets=" + sweets +
+                ", pack=" + pack +
+                '}';
     }
 }

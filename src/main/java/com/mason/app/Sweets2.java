@@ -24,11 +24,10 @@
 package com.mason.app;
 
 /**
- * Package enumeration.
+ * Sweets enumeration.
  */
-public enum Package {
- // BOX ("paper box", 5),
-  PACKET , PAPER;
+public enum Sweets2 {
+  CHOCOLATE_CANDIES,  LOLLIPOPS,   MARMALADE, MARSHMALLOW, TOFFTreasureEE;
 
   @Override
   public String toString() {

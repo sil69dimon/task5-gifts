@@ -1,9 +1,11 @@
 package com.mason.app;
 
+import java.util.ArrayList;
+
 public class Gift {
 
     private final Package pack;
-    private final Sweets sweets;
+    private final ArrayList <Sweets> sweets;
 
     public Gift(GiftBuilder giftBuilder) {
         this.sweets = giftBuilder.sweets;
@@ -14,11 +16,19 @@ public class Gift {
         return pack;
     }
 
-    public Sweets getSweets() {
+    public ArrayList <Sweets> getSweets() {
         return sweets;
     }
 
-  /*  @Override
+    @Override
+    public String toString() {
+        return "Gift{" +
+                "pack=" + pack +
+                ", sweets=" + sweets +
+                '}';
+    }
+
+    /*  @Override
     public String toString() {
 
         var sb = new StringBuilder();
