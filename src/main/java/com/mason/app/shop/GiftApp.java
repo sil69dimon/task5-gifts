@@ -1,15 +1,13 @@
-package com.mason.app;
+package com.mason.app.shop;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
-import static com.mason.app.Package.*;
 
 /**
  * Задача 5.
  * Создать консольное приложение, удовлетворяющее следующим требованиям:
  * Корректно спроектируйте и реализуйте предметную область задачи.
- * Для создания объектов из иерархии классов продумайте возможность использования порождающих шаблонов проектирования.
+ * Для создания объектов из иерархии классов продумайте возможность использования
+ * порождающих шаблонов проектирования.
  * Реализуйте проверку данных, вводимых пользователем, но не на стороне клиента.
  * для проверки корректности переданных данных можно применить регулярные выражения.
  * Меню выбора действия пользователем можно не реализовывать, используйте заглушку.
@@ -21,6 +19,11 @@ import static com.mason.app.Package.*;
 
 public class GiftApp {
     public static void main(String[] args) throws IOException {
-Client kesha = new Client("Kesha");
+        start();
+    }
+
+    public static void start() throws IOException {
+        GiftShop giftShop = new GiftShop();
+        giftShop.addClient();
     }
 }

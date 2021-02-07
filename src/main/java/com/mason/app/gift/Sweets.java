@@ -1,4 +1,6 @@
-package com.mason.app;
+package com.mason.app.gift;
+
+import java.util.Objects;
 
 public class Sweets {
 
@@ -15,7 +17,6 @@ public class Sweets {
     public Sweets(String name, int price) {
         this.name = name;
         this.price = price;
-
     }
 
     public int getId() {
@@ -44,6 +45,23 @@ public class Sweets {
 
     @Override
     public String toString() {
-        return id + ": " + name + " - " + price + " byn" ;
+        if (id != 0) {
+            return id + ": " + name + " - " + price + " byn";
+        } else {
+            return name;
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sweets sweets = (Sweets) o;
+        return name.equals(sweets.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }
