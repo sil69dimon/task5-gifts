@@ -16,8 +16,8 @@ public class Client {
         inputName();
 
         System.out.println("\nMr." + name + ". Your randomly composed gift consists of:");
-
-        Gift gift = newGift(sweets);
+        GiftBuilder build = new GiftBuilder(sweets, Package.getRandom());
+        Gift gift = build.getResult();
 
         int totalPrice = 0;
         for (int i = 0; i < gift.getSweets().size(); i++) {
@@ -35,12 +35,5 @@ public class Client {
         }
         name = scanner.nextLine();
         scanner.close();
-    }
-
-    public Gift newGift(ArrayList<Sweets> sweets) {
-        return new GiftBuilder()
-                .withPackage(Package.getRandom())
-                .withSweets(sweets)
-                .build();
     }
 }

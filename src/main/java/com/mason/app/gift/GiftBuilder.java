@@ -4,22 +4,21 @@ import java.util.ArrayList;
 
 public class GiftBuilder {
 
-    public ArrayList<Sweets> sweets;
-    public Package pack;
+    private ArrayList<Sweets> sweets;
+    private Package pack;
 
-    public GiftBuilder() {
-    }
-
-    public GiftBuilder withPackage(Package pack) {
+    public GiftBuilder(ArrayList<Sweets> sweets, Package pack) {
+        this.sweets = sweets;
         this.pack = pack;
-        return this;
     }
 
-    public GiftBuilder withSweets(ArrayList<Sweets> sweets) {
+    public void setSweets(ArrayList<Sweets> sweets) {
         this.sweets = addSweetsToGift(sweets);
-        return this;
     }
 
+    public void setPack(Package pack) {
+        this.pack = pack;
+    }
 
     private ArrayList<Sweets> addSweetsToGift(ArrayList<Sweets> sweets) {
         ArrayList<Sweets> giftSweets = new ArrayList<>();
@@ -45,7 +44,7 @@ public class GiftBuilder {
         return true;
     }
 
-    public Gift build() {
-        return new Gift(this);
+    public Gift getResult() {
+        return new Gift(pack, sweets);
     }
 }
